@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://dvkk6wkcy2x8p"]
+
+[ext_resource type="Script" path="res://scripts/fall.gd" id="1_s2cvg"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_00uir"]
+
+[node name="Fall" type="Area3D"]
+script = ExtResource("1_s2cvg")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(3.12972, 0, 0, 0, 0.253971, 0, 0, 0, 5.42542, 0, 0, 0)
+shape = SubResource("BoxShape3D_00uir")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

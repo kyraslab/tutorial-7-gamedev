@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://d3ov3or2mwwi"]
+
+[ext_resource type="Script" path="res://scripts/goal.gd" id="1_c0ptu"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_7xsxl"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_bn8xg"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hg1j3"]
+albedo_color = Color(1, 0, 0.733334, 1)
+
+[node name="Goal" type="Area3D"]
+script = ExtResource("1_c0ptu")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 5.42542, 0, 0, 0)
+shape = SubResource("SphereShape3D_7xsxl")
+
+[node name="CSGMesh3D" type="CSGMesh3D" parent="."]
+transform = Transform3D(0.545176, 0, 0, 0, 0.470797, 0, 0, 0, 0.658626, 0, 0, 0)
+mesh = SubResource("CapsuleMesh_bn8xg")
+material = SubResource("StandardMaterial3D_hg1j3")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

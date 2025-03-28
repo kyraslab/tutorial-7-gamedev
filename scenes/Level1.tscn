@@ -1,0 +1,18 @@
+[gd_scene load_steps=5 format=3 uid="uid://cnqj5mf3k6a77"]
+
+[ext_resource type="PackedScene" uid="uid://chjscjg1d4iip" path="res://scenes/World 1.tscn" id="1_sndmg"]
+[ext_resource type="PackedScene" uid="uid://dlw2kpkgr25i" path="res://scenes/Player.tscn" id="2_wj1yv"]
+[ext_resource type="PackedScene" uid="uid://d3ov3or2mwwi" path="res://scenes/Goal.tscn" id="3_cfygd"]
+[ext_resource type="PackedScene" uid="uid://dvkk6wkcy2x8p" path="res://scenes/Fall.tscn" id="4_4k5l8"]
+
+[node name="Level1" type="Node3D"]
+
+[node name="Player" parent="." instance=ExtResource("2_wj1yv")]
+
+[node name="World 1" parent="." instance=ExtResource("1_sndmg")]
+
+[node name="Goal" parent="." instance=ExtResource("3_cfygd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, -1, 0)
+
+[node name="Fall" parent="." instance=ExtResource("4_4k5l8")]
+transform = Transform3D(1.3, 0, 0, 0, 1, 0, 0, 0, 3.1, 3, -5, 3)
